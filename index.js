@@ -28,21 +28,18 @@ function moveToNextSlide() {
   }
   if (slidePosition === totalSlides - 2) {
     document.getElementById('carousel__button--next').disabled = true;
-  } else {
-    slidePosition++;
   }
-
+  slidePosition++;
   updateSlidePosition();
 }
 
 function moveToPrevSlide() {
-  if (slidePosition === 0) {
-    document.getElementById('carousel__button--prev').disabled = true;
-    document.getElementById('carousel__button--next').disabled = false;
-  } else {
-    slidePosition--;
+  if (slidePosition === totalSlides - 1) {
     document.getElementById('carousel__button--next').disabled = false;
   }
-
+  if (slidePosition === 1) {
+    document.getElementById('carousel__button--prev').disabled = true;
+  }
+  slidePosition--;
   updateSlidePosition();
 }
